@@ -14,5 +14,5 @@ et ses dependances de base.
 ## Features :
 
 - [x]  installer `nodemon`
-- [ ]  faire une route pour l'inscription & la connexion 
+- [x]  faire une route pour l'inscription & la connexion 
 - [ ]  connexion à une base de donnés `MongoDB`
