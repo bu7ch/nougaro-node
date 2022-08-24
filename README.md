@@ -16,3 +16,5 @@ et ses dependances de base.
 - [x]  installer `nodemon`
 - [x]  faire une route pour l'inscription & la connexion 
 - [x]  connexion à une base de donnés `MongoDB`
+- [x]  CRUD | Restfull API
+- [ ]   faire l'implementatin d'un front-end avec `pug`

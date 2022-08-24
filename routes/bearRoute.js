@@ -17,11 +17,21 @@ bearRouter.post("/new", (req, res) => {
   });
 });
 
-bearRouter.route("/:id").delete((req, res) => {
-  Bear.remove({ _id: req.params.id }, (err) => {
-    if (err) throw err;
-    res.json({ message: "Bear deleted successfully" });
+bearRouter.route("/:id")
+  .put((req, res) => {
+    Bear.findById(req.params.id, (err, bear) => {
+      if (err) throw err;
+      Object.assign(bear, req.body).save((err, bearEdited) => {
+        if (err) throw err;
+        res.json({ message: "Bear edited successfully", bearEdited });
+      });
+    });
+  })
+  .delete((req, res) => {
+    Bear.remove({ _id: req.params.id }, (err) => {
+      if (err) throw err;
+      res.json({ message: "Bear deleted successfully" });
+    });
   });
-});
 
 module.exports = bearRouter;
