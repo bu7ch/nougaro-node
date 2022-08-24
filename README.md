@@ -17,4 +17,5 @@ et ses dependances de base.
 - [x]  faire une route pour l'inscription & la connexion 
 - [x]  connexion à une base de donnés `MongoDB`
 - [x]  CRUD | Restfull API
-- [ ]   faire l'implementatin d'un front-end avec `pug`
+- [x]   faire l'implementatin d'un front-end avec `pug`
+    - [x] Ajout des bouttons (Ajout|Edit|Suppression)
