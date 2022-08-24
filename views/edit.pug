@@ -1,0 +1,9 @@
+extends layout.pug
+block content 
+  h1 Modification/Edition d'un ours
+    form(action=`/bears/edit/${bear.id}` method="post") 
+      .field
+        label.label Name
+      .control
+        input.input.is-normal(type="text",name="name" placeholder=`${bear.name}`)
+        button.button.is-success Mise à jour

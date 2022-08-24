@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+const volleyball = require("volleyball");
+
+const path = require("path");
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/nougaro_db", { useNewUrlParser: true });
 const db = mongoose.connection;
@@ -16,8 +19,14 @@ const bears = require("./routes/bearRoute");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use(express.static(__dirname + "/public"));
+app.use(volleyball)
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "./views"));
+
 app.get("/", (req, res) => {
-  res.send("Bienvenue dans mon API");
+  res.render("home");
 });
 
 app.use("/greetings", bonjour);

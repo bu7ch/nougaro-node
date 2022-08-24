@@ -1,0 +1,28 @@
+extends layout.pug
+block content
+  h2.title Tous mes ours
+  button.button.is-success
+    a(href="/bears/new") Ajouter 
+  table.table
+    thead
+    tr
+      th image
+      th Name
+    tbody
+    each bear in bears
+      tr.active
+        td.card-content
+          .media
+            .media-left
+              figure.image.is-48x48
+                img(src="https://bulma.io/images/placeholders/96x96.png", alt="Placeholder image")
+            .media-content
+              p.title.is-4= bear.name
+              //- p.subtitle.is-6 @johnsmith
+        td
+          button.button.is-warning
+            a(href=`/bears/edit/${bear.id}`) Modifier
+        td
+          button.button.is-danger
+            a(href=`/bears/delete/${bear.id}`) Suprimmer
+    

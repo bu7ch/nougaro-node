@@ -1,0 +1,9 @@
+extends layout.pug
+block content
+  h2.title Ajouter un Ours
+  form(action="/bears/new" method="post") 
+    .field
+      label.label Name
+      .control
+        input.input.is-small(type="text",name="name" placeholder="e.g Winnie")
+        button.button.is-success Ajouter
