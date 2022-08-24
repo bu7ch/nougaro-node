@@ -1,6 +1,12 @@
 const express = require("express");
-
 const app = express();
+const mongoose = require("mongoose");
+mongoose.connect('mongodb://localhost/nougaro_db', {useNewUrlParser:true});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', () => {
+  console.log(`[MongoDB is connected!!]`)
+})
 
 const port = process.env.PORT || 5000;
 const router = require("./routes/basicRoute");

@@ -15,4 +15,4 @@ et ses dependances de base.
 
 - [x]  installer `nodemon`
 - [x]  faire une route pour l'inscription & la connexion 
-- [ ]  connexion à une base de donnés `MongoDB`
+- [x]  connexion à une base de donnés `MongoDB`
